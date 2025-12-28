@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Interactive - God of War</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../map.css">
+</head>
+<body>
+    <header>
+        <h1>God Of War</h1>
+        <nav>
+            <a href="../index.html">Accueil</a>
+            <a href="jeux.html">Jeux</a>
+            <a href="personnages.html">Personnages</a>
+            <a href="map.html">Map Interactive</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="map-section">
+            <h2>Carte Interactive de la Saga</h2>
+            <p class="map-description">Explorez les univers de God of War à travers les âges</p>
+
+            <!-- Boutons pour changer d'ère -->
+            <div class="era-selector">
+                <button class="era-btn active" data-era="grecque">
+                    <span class="era-icon">⚔️</span>
+                    Ère Grecque
+                </button>
+                <button class="era-btn" data-era="nordique">
+                    <span class="era-icon">🪓</span>
+                    Ère Nordique
+                </button>
+            </div>
+
+            <!-- ========== CARTE GRECQUE ========== -->
+            <div class="map-container active" id="map-grecque">
+                <img src="../images/map/grecque.jpg" alt="Carte Grèce Antique" class="carte-image">
+                
+                <!-- God of War 1 (2005) -->
+                <div class="point" data-jeu="gow1" style="top: 60%; left: 15%;">
+                    <span class="point-label">God of War (2005)</span>
+                </div>
+                
+                <!-- God of War 2 (2007) -->
+                <div class="point" data-jeu="gow2" style="top: 40%; left: 30%;">
+                    <span class="point-label">God of War II (2007)</span>
+                </div>
+                
+                <!-- God of War 3 (2010) -->
+                <div class="point" data-jeu="gow3" style="top:15%; left: 50%;">
+                    <span class="point-label">God of War III (2010)</span>
+                </div>
+
+                <!-- God of War Ascension (2013) -->
+                <div class="point" data-jeu="ascension" style="top: 65%; left: 45%;">
+                    <span class="point-label">God of War: Ascension (2013)</span>
+                </div>
+            </div>
+
+            <!-- ========== CARTE NORDIQUE ========== -->
+            <div class="map-container" id="map-nordique">
+                <img src="../images/map/NORDIQUE.png" alt="Carte Royaumes Nordiques" class="carte-image">
+                
+                <!-- God of War 2018 -->
+                <div class="point" data-jeu="gow2018" style="top: 50%; left: 50%;">
+                    <span class="point-label">God of War (2018)</span>
+                </div>
+                
+                <!-- God of War Ragnarök -->
+                <div class="point" data-jeu="ragnarok" style="top: 15%; left: 75%;">
+                    <span class="point-label">God of War Ragnarök (2022)</span>
+                </div>
+            </div>
+
+            <!-- Panneau d'informations -->
+            <div id="info-panel" class="info-panel hidden">
+                <button class="close-btn" id="close-panel">✕</button>
+                <div class="info-content">
+                    <h3 id="jeu-titre"></h3>
+                    <p class="jeu-annee" id="jeu-annee"></p>
+                    <img id="jeu-image" src="" alt="">
+                    <p id="jeu-description"></p>
+                    <div class="jeu-details">
+                        <p><strong>Plateforme :</strong> <span id="jeu-plateforme"></span></p>
+                        <p><strong>Lieu :</strong> <span id="jeu-lieu"></span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Projet réalisé par Jawed - ECAM EPMI 2025</p>
+    </footer>
+
+    <script src="../map.js"></script>
+</body>
+</html>
