@@ -5,7 +5,7 @@ Site interactif Fandom-style sur l'univers de God of War avec une carte interact
 ## 🚀 Fonctionnalités
 - **Navigation Immersive** : Design sombre et dynamique adapté à l'univers nordique.
 - **Carte des Royaumes** : Système interactif développé pour explorer le monde du jeu.
-- **Encyclopédie de la Saga** : Présentation des différents jeux et personnages emblématiques.
+- **Encyclopédie de la Saga** : Présentation des différents jeux et personnages emblématiques (en cours d'execution).
 
 ## 🛠️ Technologies
 - **Front-end** : HTML5, CSS3 (Flexbox, Animations), JavaScript.
