@@ -140,7 +140,7 @@ nav a:visited {
     color: #FFFFFF;
     font-family: 'thor', Arial, sans-serif;
     position: relative; /* Assure que le texte reste au-dessus */
-    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.8); /* Ombre portée pour la lisibilité */
+    text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.5); /* Ombre portée pour la lisibilité */
 }
 
 .hero p {

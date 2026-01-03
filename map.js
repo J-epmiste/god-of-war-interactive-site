@@ -9,16 +9,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeBtn = document.getElementById('close-panel');
     
     // Éléments du panneau d'info
+    const infoContentNormal = document.getElementById('info-content-normal');
+    const submapContainer = document.getElementById('submap-container');
     const jeuTitre = document.getElementById('jeu-titre');
     const jeuAnnee = document.getElementById('jeu-annee');
     const jeuDescription = document.getElementById('jeu-description');
     const jeuImage = document.getElementById('jeu-image');
     const jeuPlateforme = document.getElementById('jeu-plateforme');
     const jeuLieu = document.getElementById('jeu-lieu');
+    
+    // Boutons spéciaux
+    const btnExplorerRoyaumes = document.getElementById('btn-explorer-royaumes');
+    const btnRetourRagnarok = document.getElementById('btn-retour-ragnarok');
+    
+    // Éléments royaume
+    const royaumePanel = document.getElementById('royaume-panel');
+    const royaumeNom = document.getElementById('royaume-nom');
+    const royaumeImage = document.getElementById('royaume-image');
+    const royaumeDescription = document.getElementById('royaume-description');
 
     // ========== BASE DE DONNÉES DES JEUX ==========
     const jeux = {
-        // ÈRE GRECQUE
         gow1: {
             titre: "God of War",
             annee: "2005",
@@ -51,8 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
             lieu: "Prison des Damnés, Delphes, Temple de Delphes",
             image: "../images/games/gowascension.jpg"
         },
-
-        // ÈRE NORDIQUE
         gow2018: {
             titre: "God of War",
             annee: "2018",
@@ -67,21 +76,68 @@ document.addEventListener('DOMContentLoaded', function() {
             description: "La suite directe de God of War (2018). Kratos et Atreus cherchent des réponses alors que le Ragnarök, la fin prophétisée des dieux nordiques, approche. Ils voyagent à travers les neuf royaumes, affrontant Thor et Odin, tout en découvrant le destin d'Atreus/Loki. Ce chapitre conclut la saga nordique avec des combats épiques et des révélations bouleversantes.",
             plateforme: "PlayStation 4, PlayStation 5",
             lieu: "Les 9 Royaumes - Svartalfheim, Vanaheim, Asgard, Muspelheim",
-            image: "../images/games/gowragnarok.jpg"
+            image: "../images/games/gowragnarok.jpg",
+            hasSubmap: true // Indique que ce jeu a une sous-map
+        }
+    };
+
+    // ========== BASE DE DONNÉES DES 9 ROYAUMES ==========
+    const royaumes = {
+        midgard: {
+            nom: "Midgard",
+            description: "Le royaume des humains, au centre d'Yggdrasil. Terre natale de Kratos et Atreus, c'est ici que commence leur périple. Un monde de forêts denses, de lacs mystérieux et de montagnes majestueuses.",
+            image: "../images/map/royaumes/midgard.jpg"
+        },
+        asgard: {
+            nom: "Asgard",
+            description: "Le royaume des dieux Ases, gouverné par Odin. Forteresse céleste dorée, symbole de pouvoir absolu. Ses halls dorés et murailles imprenables incarnent la puissance divine.",
+            image: "../images/map/royaumes/asgard.jpg"
+        },
+        vanaheim: {
+            nom: "Vanaheim",
+            description: "Le royaume des dieux Vanes, un monde luxuriant et verdoyant. Déchiré par une guerre éternelle, c'est un lieu de beauté naturelle corrompue par les conflits.",
+            image: "../images/map/royaumes/vanaheim.jpg"
+        },
+        alfheim: {
+            nom: "Alfheim",
+            description: "Le royaume des elfes de lumière, baigné d'une luminosité dorée éthérée. Divisé par une guerre sans fin entre elfes de lumière et elfes noirs pour le contrôle de la Lumière d'Alfheim.",
+            image: "../images/map/royaumes/alfheim.jpg"
+        },
+        svartalfheim: {
+            nom: "Svartalfheim",
+            description: "Le royaume des nains, un monde souterrain de forges incandescentes et de mines profondes. Les nains y créent les armes les plus puissantes des neuf royaumes, comme le Mjölnir.",
+            image: "../images/map/royaumes/svartalfheim.jpg"
+        },
+        helheim: {
+            nom: "Helheim",
+            description: "Le royaume des morts, un lieu glacial et désolé où errent les âmes perdues. Gouverné par Hel, enveloppé d'un froid éternel et d'une brume mortelle qui draine la vie.",
+            image: "../images/map/royaumes/helheim.jpg"
+        },
+        niflheim: {
+            nom: "Niflheim",
+            description: "Le royaume des brumes et du froid primordial. Un labyrinthe mortel rempli de poisons et de dangers où seuls les plus braves guerriers osent s'aventurer pour réclamer des trésors légendaires.",
+            image: "../images/map/royaumes/niflheim.jpg"
+        },
+        muspelheim: {
+            nom: "Muspelheim",
+            description: "Le royaume du feu éternel, terre des géants de feu dirigés par Surtr. Ses arènes de combat testent les guerriers les plus courageux dans des épreuves de feu et de sang.",
+            image: "../images/map/royaumes/muspelheim.jpg"
+        },
+        jotunheim: {
+            nom: "Jotunheim",
+            description: "Le royaume des géants, fermé depuis des générations. Un lieu mystérieux et ancien, gardien de secrets sur les origines d'Atreus/Loki et son destin prophétisé.",
+            image: "../images/map/royaumes/jotunheim.jpg"
         }
     };
 
     // ========== FONCTION : CHANGER D'ÈRE ==========
     function changerEre(era) {
-        // Retirer la classe active de tous les boutons et cartes
         eraButtons.forEach(btn => btn.classList.remove('active'));
         mapContainers.forEach(map => map.classList.remove('active'));
 
-        // Activer le bouton cliqué
         const btnActif = document.querySelector(`[data-era="${era}"]`);
         btnActif.classList.add('active');
 
-        // Activer la carte correspondante
         const mapActif = document.getElementById(`map-${era}`);
         mapActif.classList.add('active');
     }
@@ -91,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const jeu = jeux[jeuId];
         
         if (jeu) {
-            // Remplir le panneau avec les infos
+            // Remplir les infos
             jeuTitre.textContent = jeu.titre;
             jeuAnnee.textContent = jeu.annee;
             jeuDescription.textContent = jeu.description;
@@ -100,7 +156,19 @@ document.addEventListener('DOMContentLoaded', function() {
             jeuPlateforme.textContent = jeu.plateforme;
             jeuLieu.textContent = jeu.lieu;
             
-            // Afficher le panneau avec animation
+            // Afficher/masquer le bouton d'exploration des royaumes
+            if (jeu.hasSubmap) {
+                btnExplorerRoyaumes.style.display = 'flex';
+            } else {
+                btnExplorerRoyaumes.style.display = 'none';
+            }
+            
+            // Afficher le contenu normal, cacher la sous-map
+            infoContentNormal.style.display = 'block';
+            submapContainer.style.display = 'none';
+            royaumePanel.style.display = 'none';
+            
+            // Afficher le panneau
             infoPanel.classList.remove('hidden');
             infoPanel.style.opacity = '0';
             infoPanel.style.transform = 'translate(-50%, -50%) scale(0.8)';
@@ -112,6 +180,34 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // ========== FONCTION : AFFICHER LA SOUS-MAP ==========
+    function afficherSousMap() {
+        infoContentNormal.style.display = 'none';
+        submapContainer.style.display = 'block';
+        royaumePanel.style.display = 'none';
+    }
+
+    // ========== FONCTION : RETOUR À RAGNARÖK ==========
+    function retourRagnarok() {
+        infoContentNormal.style.display = 'block';
+        submapContainer.style.display = 'none';
+        royaumePanel.style.display = 'none';
+    }
+
+    // ========== FONCTION : AFFICHER INFOS ROYAUME ==========
+    function afficherInfosRoyaume(royaumeId) {
+        const royaume = royaumes[royaumeId];
+        
+        if (royaume) {
+            royaumeNom.textContent = royaume.nom;
+            royaumeDescription.textContent = royaume.description;
+            royaumeImage.src = royaume.image;
+            royaumeImage.alt = royaume.nom;
+            
+            royaumePanel.style.display = 'block';
+        }
+    }
+
     // ========== FONCTION : FERMER LE PANNEAU ==========
     function fermerPanel() {
         infoPanel.style.opacity = '0';
@@ -119,6 +215,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         setTimeout(() => {
             infoPanel.classList.add('hidden');
+            royaumePanel.style.display = 'none';
+            infoContentNormal.style.display = 'block';
+            submapContainer.style.display = 'none';
         }, 300);
     }
 
@@ -138,25 +237,41 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // ========== ÉVÉNEMENTS : BOUTON EXPLORER ROYAUMES ==========
+    if (btnExplorerRoyaumes) {
+        btnExplorerRoyaumes.addEventListener('click', afficherSousMap);
+    }
+
+    // ========== ÉVÉNEMENTS : BOUTON RETOUR RAGNARÖK ==========
+    if (btnRetourRagnarok) {
+        btnRetourRagnarok.addEventListener('click', retourRagnarok);
+    }
+
+    // ========== ÉVÉNEMENTS : POINTS DES ROYAUMES ==========
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.royaume-point')) {
+            const royaumeId = e.target.closest('.royaume-point').getAttribute('data-royaume');
+            afficherInfosRoyaume(royaumeId);
+        }
+    });
+
     // ========== ÉVÉNEMENTS : FERMER LE PANNEAU ==========
     closeBtn.addEventListener('click', fermerPanel);
 
-    // Fermer en cliquant sur l'overlay
     infoPanel.addEventListener('click', function(e) {
         if (e.target === this) {
             fermerPanel();
         }
     });
 
-    // Fermer avec la touche Échap
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && !infoPanel.classList.contains('hidden')) {
             fermerPanel();
         }
     });
 
-    // ========== MESSAGE DE DÉMARRAGE ==========
     console.log('🎮 Map Interactive God of War chargée !');
     console.log('📍 Ère Grecque : 4 jeux');
     console.log('📍 Ère Nordique : 2 jeux');
+    console.log('🗺️ Sous-map Ragnarök : 9 royaumes disponibles');
 });

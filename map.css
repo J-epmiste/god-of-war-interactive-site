@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'thor';
+    src: url('assets/fonts/Thor.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 /* Section de la map */
 .map-section {
     padding: 60px 20px;
@@ -5,9 +11,9 @@
 }
 
 .map-section h2 {
-    font-family: 'GodOfWar', Arial, sans-serif;
+    font-family: 'thor', Arial, sans-serif;
     font-size: 48px;
-    color: #ff0000;
+    color: #ffffff;
     margin-bottom: 20px;
     text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.5);
 }
@@ -471,4 +477,233 @@
     .map-section h2 {
         font-size: 36px;
     }
+}
+/* ========== BOUTON EXPLORER LES ROYAUMES (SPÉCIAL RAGNARÖK) ========== */
+
+.btn-explorer-royaumes {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+    padding: 20px 40px;
+    background: linear-gradient(145deg, #6a4c93, #4a3470);
+    border: 3px solid #b19cd9;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'GodOfWar', Arial, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 
+        0 8px 25px rgba(177, 156, 217, 0.4),
+        inset 0 2px 5px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn-explorer-royaumes::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(177, 156, 217, 0.3), transparent);
+    transform: rotate(45deg);
+    animation: shineEffect 3s infinite;
+}
+
+@keyframes shineEffect {
+    0% { transform: rotate(45deg) translateX(-100%); }
+    100% { transform: rotate(45deg) translateX(100%); }
+}
+
+.btn-explorer-royaumes:hover {
+    background: linear-gradient(145deg, #8b6bb7, #6a4c93);
+    border-color: #d4c5f9;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 
+        0 12px 35px rgba(177, 156, 217, 0.6),
+        0 0 50px rgba(177, 156, 217, 0.4),
+        inset 0 2px 8px rgba(255, 255, 255, 0.3);
+}
+
+.btn-explorer-royaumes:active {
+    transform: translateY(-2px) scale(1.02);
+}
+
+.btn-icon {
+    font-size: 28px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+    animation: iconFloat 2s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+/* ========== SOUS-MAP DES 9 ROYAUMES (VIOLET) ========== */
+#submap-container {
+    padding: 15px 20px 20px 20px; /* Réduit le padding du haut */
+}
+
+.submap-content {
+    position: relative;
+}
+
+.submap-title {
+    font-family: 'GodOfWar', Arial, sans-serif;
+    color: #b19cd9;
+    font-size: 36px;
+    margin-bottom: 8px;
+    text-align: center;
+    text-shadow: 
+        2px 2px 10px rgba(177, 156, 217, 0.8),
+        0 0 20px rgba(177, 156, 217, 0.5);
+}
+
+.submap-subtitle {
+    color: #aaa;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.submap-wrapper {
+    position: relative;
+    border: 2px solid #b19cd9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(177, 156, 217, 0.3);
+    max-width: 100%;
+    margin-bottom: 0; /* Supprime l'espace en bas */
+}
+
+.submap-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+}
+
+/* Points des royaumes (VIOLET) */
+.royaume-point {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, rgba(177, 156, 217, 0.9), rgba(140, 120, 180, 0.7));
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 
+        0 0 15px rgba(177, 156, 217, 0.6),
+        inset 0 1px 3px rgba(255, 255, 255, 0.3);
+}
+
+.royaume-point::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(177, 156, 217, 0.4);
+    border-radius: 50%;
+    animation: pulseViolet 2s infinite;
+}
+
+@keyframes pulseViolet {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
+
+.royaume-point:hover {
+    background: radial-gradient(circle, #b19cd9, #d4c5f9);
+    transform: translate(-50%, -50%) scale(1.4);
+    box-shadow: 
+        0 0 25px rgba(177, 156, 217, 1),
+        inset 0 2px 6px rgba(255, 255, 255, 0.5);
+}
+
+.royaume-label {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(40, 30, 50, 0.95));
+    color: #b19cd9;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    border: 2px solid #b19cd9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+.royaume-point:hover .royaume-label {
+    opacity: 1;
+}
+
+/* Panneau info royaume (VIOLET) */
+#royaume-panel {
+    margin-top: 20px;
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(26, 30, 34, 0.95), rgba(13, 13, 13, 0.95));
+    border: 3px solid #b19cd9;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(177, 156, 217, 0.4);
+}
+
+#royaume-panel h3 {
+    font-family: 'GodOfWar', Arial, sans-serif;
+    color: #b19cd9;
+    font-size: 32px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 10px rgba(177, 156, 217, 0.6);
+}
+
+#royaume-panel p {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* Bouton retour (VIOLET) */
+.btn-retour {
+    background: linear-gradient(145deg, #b19cd9, #8b6bb7);
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(177, 156, 217, 0.4);
+}
+
+.btn-retour:hover {
+    background: linear-gradient(145deg, #d4c5f9, #b19cd9);
+    transform: translateX(-5px);
+    box-shadow: 0 6px 20px rgba(177, 156, 217, 0.6);
 }

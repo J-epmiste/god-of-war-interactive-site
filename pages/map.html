@@ -62,7 +62,7 @@
 
             <!-- ========== CARTE NORDIQUE ========== -->
             <div class="map-container" id="map-nordique">
-                <img src="../images/map/NORDIQUE.png" alt="Carte Royaumes Nordiques" class="carte-image">
+                <img src="../images/map/nordique.jpg" alt="Carte Royaumes Nordiques" class="carte-image">
                 
                 <!-- God of War 2018 -->
                 <div class="point" data-jeu="gow2018" style="top: 50%; left: 50%;">
@@ -76,19 +76,94 @@
             </div>
 
             <!-- Panneau d'informations -->
-            <div id="info-panel" class="info-panel hidden">
-                <button class="close-btn" id="close-panel">✕</button>
-                <div class="info-content">
-                    <h3 id="jeu-titre"></h3>
-                    <p class="jeu-annee" id="jeu-annee"></p>
-                    <img id="jeu-image" src="" alt="">
-                    <p id="jeu-description"></p>
-                    <div class="jeu-details">
-                        <p><strong>Plateforme :</strong> <span id="jeu-plateforme"></span></p>
-                        <p><strong>Lieu :</strong> <span id="jeu-lieu"></span></p>
-                    </div>
-                </div>
+<div id="info-panel" class="info-panel hidden">
+    <button class="close-btn" id="close-panel">✕</button>
+    
+    <!-- Contenu normal (pour tous les jeux sauf Ragnarök) -->
+    <div class="info-content" id="info-content-normal">
+        <h3 id="jeu-titre"></h3>
+        <p class="jeu-annee" id="jeu-annee"></p>
+        <img id="jeu-image" src="" alt="">
+        <p id="jeu-description"></p>
+        <div class="jeu-details">
+            <p><strong>Plateforme :</strong> <span id="jeu-plateforme"></span></p>
+            <p><strong>Lieu :</strong> <span id="jeu-lieu"></span></p>
+        </div>
+        
+        <!-- Bouton spécial pour Ragnarök (caché par défaut) -->
+        <button id="btn-explorer-royaumes" class="btn-explorer-royaumes" style="display: none;">
+            <span class="btn-icon">🌲</span>
+            Explorer les 9 Royaumes
+            <span class="btn-glow"></span>
+        </button>
+    </div>
+
+    <!-- Sous-map des 9 Royaumes (cachée par défaut) -->
+    <div id="submap-container" style="display: none;">
+        <div class="submap-content">
+            <button id="btn-retour-ragnarok" class="btn-retour">← Retour à Ragnarök</button>
+            
+            <h2 class="submap-title">Les 9 Royaumes</h2>
+            <p class="submap-subtitle">Cliquez sur un royaume pour découvrir son histoire</p>
+            
+            <div class="submap-wrapper">
+    <img src="../images/map/yggdrasil.png" alt="Carte des 9 Royaumes" class="submap-image">
+    
+    <!-- Asgard (en haut centre, royaume bleu/violet) -->
+    <div class="royaume-point" data-royaume="asgard" style="top: 18%; left: 50%;">
+        <span class="royaume-label">Asgard</span>
+    </div>
+    
+    <!-- Vanaheim (gauche haut, royaume vert avec arbre) -->
+    <div class="royaume-point" data-royaume="vanaheim" style="top: 28%; left: 22%;">
+        <span class="royaume-label">Vanaheim</span>
+    </div>
+    
+    <!-- Alfheim (droite haut, royaume doré) -->
+    <div class="royaume-point" data-royaume="alfheim" style="top: 25%; left: 78%;">
+        <span class="royaume-label">Alfheim</span>
+    </div>
+    
+    <!-- Midgard (centre, avec le lac et la ville) -->
+    <div class="royaume-point" data-royaume="midgard" style="top: 48%; left: 52%;">
+        <span class="royaume-label">Midgard</span>
+    </div>
+    
+    <!-- Jotunheim (gauche centre) -->
+    <div class="royaume-point" data-royaume="jotunheim" style="top: 45%; left: 18%;">
+        <span class="royaume-label">Jotunheim</span>
+    </div>
+    
+    <!-- Svartalfheim (droite centre, royaume des nains) -->
+    <div class="royaume-point" data-royaume="svartalfheim" style="top: 50%; left: 80%;">
+        <span class="royaume-label">Svartalfheim</span>
+    </div>
+    
+    <!-- Muspelheim (bas gauche, royaume orange/feu) -->
+    <div class="royaume-point" data-royaume="muspelheim" style="top: 70%; left: 28%;">
+        <span class="royaume-label">Muspelheim</span>
+    </div>
+    
+    <!-- Niflheim (bas centre gauche) -->
+    <div class="royaume-point" data-royaume="niflheim" style="top: 75%; left: 48%;">
+        <span class="royaume-label">Niflheim</span>
+    </div>
+    
+    <!-- Helheim (bas droite) -->
+    <div class="royaume-point" data-royaume="helheim" style="top: 68%; left: 72%;">
+        <span class="royaume-label">Helheim</span>
+    </div>
+</div>
+            
+            <!-- Panneau info royaume -->
+            <div id="royaume-panel" style="display: none;">
+                <h3 id="royaume-nom"></h3>
+                <img id="royaume-image" src="" alt="" style="width: 100%; border-radius: 10px; margin: 15px 0;">
+                <p id="royaume-description"></p>
             </div>
+        </div>
+    </div>
+</div>
         </section>
     </main>
 
