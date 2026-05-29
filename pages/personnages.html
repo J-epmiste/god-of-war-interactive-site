@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personnages - God of War</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="personnages.css">
+</head>
+<body>
+    <header>
+        <h1>God Of War</h1>
+        <nav>
+            <a href="../index.html">Accueil</a>
+            <a href="personnages.html">Personnages</a>
+            <a href="map.html">Map Interactive</a>
+            <a href="association.html">EPMI Gaming</a>
+        </nav>
+    </header>
+ 
+    <main>
+        <section class="perso-hero">
+            <h2>Les Personnages de la Saga</h2>
+            <p>Alliés, ennemis, dieux et mortels — tous ont croisé le chemin du Ghost of Sparta</p>
+        </section>
+ 
+        <!-- FILTRES -->
+        <div class="filtres-container">
+            <button class="filtre-btn active" data-filtre="tous">Tous</button>
+            <button class="filtre-btn" data-filtre="ennemi">⚔️ Ennemis</button>
+            <button class="filtre-btn" data-filtre="allie">🛡️ Alliés</button>
+            <button class="filtre-btn" data-filtre="nordique">🪓 Ère Nordique</button>
+            <button class="filtre-btn" data-filtre="grecque">⚡ Ère Grecque</button>
+        </div>
+ 
+        <!-- KRATOS BANNER -->
+        <div class="kratos-banner">
+            <div class="kratos-image-wrapper">
+                <img src="../images/personnages/Kratos.jpg" alt="Kratos"
+                     onerror="this.parentElement.innerHTML='<div class=\'perso-placeholder\'>⚔️</div>'">
+            </div>
+            <div class="kratos-info">
+                <p class="kratos-label">Protagoniste Principal</p>
+                <h3 class="kratos-name">KRATOS</h3>
+                <p class="kratos-desc">
+                    Ancien général spartiate devenu le Fantôme de Sparte, Kratos a assassiné sa propre famille sous l'emprise d'Arès,
+                    puis massacré les dieux de l'Olympe un à un. Après avoir détruit la Grèce antique, il s'exile dans les terres nordiques
+                    où il tente de vivre en paix avec son fils Atreus — jusqu'à ce que les dieux nordiques brisent cette paix.
+                    Porteur des Lames du Chaos et de la Hache Léviathan, il est l'homme le plus dangereux des neuf royaumes.
+                </p>
+                <div class="kratos-stats">
+                    <div class="stat">
+                        <span class="stat-value">5</span>
+                        <span class="stat-label">Jeux principaux</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">∞</span>
+                        <span class="stat-label">Dieux tués</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">2</span>
+                        <span class="stat-label">Panthéons détruits</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <!-- GRILLE PERSONNAGES -->
+        <section class="perso-grid" id="perso-grid">
+ 
+            <!-- ATREUS -->
+            <div class="perso-card" data-relation="allie" data-ere="nordique" onclick="ouvrirModal(this)"
+                data-nom="Atreus"
+                data-ere-label="Ère Nordique"
+                data-desc="Fils de Kratos et de Faye, une géante nordique, Atreus ignore longtemps ses véritables origines. Rebaptisé Loki par sa mère, il accompagne son père dans le voyage pour disperser les cendres de Faye au sommet de la plus haute montagne des neuf royaumes. Impétueux et curieux, il apprend à manier l'arc et la magie runique. Sa relation avec Kratos évolue d'une distance froide vers un lien père-fils fort et sincère. Il est une figure centrale de la prophétie du Ragnarök."
+                data-jeux="God of War (2018)|allie,God of War Ragnarök (2022)|allie"
+                data-badge="Allié" data-badge-type="allie">
+                <div class="badge badge-allie">Allié</div>
+                <div class="perso-image-wrapper">
+                    <img class="perso-img" src="../images/personnages/atreus.jpg" alt="Atreus"
+                         onerror="this.parentElement.innerHTML='<div class=\'perso-placeholder\'>🏹</div>'">
+                </div>
+                <div class="perso-content">
+                    <h3 class="perso-name">Atreus</h3>
+                    <p class="perso-ere">Ère Nordique</p>
+                    <p class="perso-desc-short">Fils de Kratos et de la géante Faye. Connu sous le nom de Loki dans la prophétie nordique, il accompagne son père tout au long de la saga nordique.</p>
+                    <div class="perso-jeux">
+                        <span class="jeu-pill allie-pill">God of War (2018)</span>
+                        <span class="jeu-pill allie-pill">God of War Ragnarök (2022)</span>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- MIMIR -->
+            <div class="perso-card" data-relation="allie" data-ere="nordique" onclick="ouvrirModal(this)"
+                data-nom="Mimir"
+                data-ere-label="Ère Nordique"
+                data-desc="L'homme le plus sage des neuf royaumes, emprisonné par Odin à un arbre depuis des décennies. Kratos le décapite pour le libérer de ce supplice, et Freya ramène sa tête à la vie grâce à la magie. Mimir devient le compagnon de voyage de Kratos et Atreus, offrant ses connaissances encyclopédiques des royaumes nordiques, des dieux et des prophéties. Il sert de traducteur, de guide et de conscience morale pour le duo."
+                data-jeux="God of War (2018)|allie,God of War Ragnarök (2022)|allie"
+                data-badge="Allié" data-badge-type="allie">
+                <div class="badge badge-allie">Allié</div>
+                <div class="perso-image-wrapper">
+                    <img class="perso-img" src="../images/personnages/mimir.jpg" alt="Mimir"
+                         onerror="this.parentElement.innerHTML='<div class=\'perso-placeholder\'>💀</div>'">
+                </div>
+                <div class="perso-content">
+                    <h3 class="perso-name">Mimir</h3>
+                    <p class="perso-ere">Ère Nordique</p>
+                    <p class="perso-desc-short">L'homme le plus sage des neuf royaumes. Sa tête décapitée devient le compagnon et conseiller attitré de Kratos après qu'il le libère de la prison d'Odin.</p>
+                    <div class="perso-jeux">
+                        <span class="jeu-pill allie-pill">God of War (2018)</span>
+                        <span class="jeu-pill allie-pill">God of War Ragnarök (2022)</span>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- FREYA -->
+            <div class="perso-card" data-relation="allie" data-ere="nordique" onclick="ouvrirModal(this)"
+                data-nom="Freya"
+                data-ere-label="Ère Nordique"
+                data-desc="Ancienne reine des Vanirs et ex-épouse d'Odin, Freya est une puissante sorcière et guérisseuse qui vit en exil dans la forêt de Midgard. Elle aide Kratos et Atreus lors de la quête de 2018. Mais quand Kratos tue Baldur, son fils bien-aimé, elle jure de se venger. Dans Ragnarök, après avoir récupéré ses pouvoirs de valkyrie confisqués par Odin, elle finit par rejoindre Kratos pour combattre ensemble contre le tyran des Ases."
+                data-jeux="God of War (2018) — Alliée|allie,God of War Ragnarök (2022) — Ennemie puis Alliée|ennemi"
+                data-badge="Alliée / Ennemie" data-badge-type="neutre">
+                <div class="badge badge-neutre">Alliée / Ennemie</div>
+                <div class="perso-image-wrapper">
+                    <img class="perso-img" src="../images/personnages/freya.jpg" alt="Freya"
+                         onerror="this.parentElement.innerHTML='<div class=\'perso-placeholder\'>🌿</div>'">
+                </div>
+                <div class="perso-content">
+                    <h3 class="perso-name">Freya</h3>
+                    <p class="perso-ere">Ère Nordique</p>
+                    <p class="perso-desc-short">Alliée dans God of War (2018), elle devient l'ennemie jurée de Kratos après la mort de Baldur, avant de finalement rejoindre sa cause dans Ragnarök.</p>
+                    <div class="perso-jeux">
+                        <span class="jeu-pill allie-pill">God of War (2018) — Alliée</span>
+                        <span class="jeu-pill combat-pill">Ragnarök (2022) — Ennemie → Alliée</span>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- BALDUR -->
+            <div class="perso-card" data-relation="ennemi" data-ere="nordique" onclick="ouvrirModal(this)"
+                data-nom="Baldur"
+                data-ere-label="Ère Nordique — Antagoniste Principal"
+                data-desc="Fils de Freya et d'Odin, Baldur est le dieu nordique de la lumière. Sa mère lui a jeté un sort d'invulnérabilité qui lui permet de ne rien ressentir — ni douleur, ni plaisir, ni chaleur ni froid. Ce manque de sensation le rend fou de rage. Envoyé par Odin pour retrouver le Géant masqué (Kratos), il devient l'antagoniste principal de God of War (2018). Kratos l'affronte à trois reprises et finit par le tuer pour protéger Freya — malgré les supplications de cette dernière."
+                data-jeux="God of War (2018) — Boss final|ennemi"
+                data-badge="Ennemi Principal" data-badge-type="ennemi">
+                <div class="badge badge-ennemi">Ennemi Principal</div>
+                <div class="perso-image-wrapper">
+                    <img class="perso-img" src="../images/personnages/baldur.jpg" alt="Baldur"
+                         onerror="this.parentElement.innerHTML='<div class=\'perso-placeholder\'>❄️</div>'">
+                </div>
+                <div class="perso-content">
+                    <h3 class="perso-name">Baldur</h3>
+                    <p class="perso-ere">Ère Nordique — Antagoniste</p>
+                    <p class="perso-desc-short">Dieu de la lumière et fils de Freya, rendu insensible par un sortilège maternel. Il traque Kratos pour le compte d'Odin et l'affronte plusieurs fois avant leur duel final.</p>
+                    <div class="perso-jeux">
+                        <span class="jeu-pill combat-pill">God of War (2018) — Boss final</span>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- THOR -->
+            <div class="perso-card" data-relation="ennemi" data-ere="nordique" onclick="ouvrirModal(this)"
+                data-nom="Thor"
+                data-ere-label="Ère Nordique — Antagoniste"
+                data-desc="Dieu du tonnerre, fils d'Odin et champion des Ases. Thor est brutal, impulsif et alcoolique, rongé par la culpabilité d'avoir tué ses propres fils. Dans Ragnarök, il confronte Kratos dès le début par ordre d'Odin pour venger la mort de Baldur et de ses fils Magni et Modi. Kratos l'affronte dans deux combats épiques. Vers la fin, Thor commence à remettre en question les actes d'Odin, avant d'être tragiquement tué par son propre père."
+                data-jeux="God of War Ragnarök (2022) — Boss|ennemi"
+                data-badge="Ennemi" data-badge-type="ennemi">
+                <div class="badge badge-ennemi">Ennemi</div>
+                <div class="perso-image-wrapper">
+                    <img class="perso-img" src="../images/personnages/thor.jpg" alt="Thor"
+                         onerror="this.parentElement.innerHTML='<div class=\'perso-placeholder\'>⚡</div>'">
+                </div>
+                <div class="perso-content">
+                    <h3 class="perso-name">Thor</h3>
+                    <p class="perso-ere">Ère Nordique — Antagoniste</p>
+                    <p class="perso-desc-short">Dieu du tonnerre et fils d'Odin. Porteur du Mjölnir, il confronte Kratos au nom d'Odin dans Ragnarök, avant une fin tragique orchestrée par son propre père.</p>
+                    <div class="perso-jeux">
+                        <span class="jeu-pill combat-pill">God of War Ragnarök (2022) — Boss</span>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- ODIN -->
+            <div class="perso-card" data-relation="ennemi" data-ere="nordique" onclick="ouvrirModal(this)"
+                data-nom="Odin"
+                data-ere-label="Ère Nordique — Antagoniste Final"
+                data-desc="Le roi des dieux Ases, père de Thor et Baldur, et véritable antagoniste de la saga nordique. Odin est obsédé par la connaissance et la prophétie du Ragnarök qu'il cherche à empêcher à tout prix. Manipulateur, calculateur et impitoyable, il sacrifie tout le monde autour de lui — même ses propres fils — pour son obsession. Il affronte directement Kratos et Atreus lors du climax de Ragnarök, et sera finalement vaincu par les alliés réunis de Kratos."
+                data-jeux="God of War Ragnarök (2022) — Boss final|ennemi"
+                data-badge="Antagoniste Ultime" data-badge-type="ennemi">
+                <div class="badge badge-ennemi">Antagoniste Ultime</div>
+                <div class="perso-image-wrapper">
+                    <img class="perso-img" src="../images/personnages/Odin.jpg" alt="Odin"
+                         onerror="this.parentElement.innerHTML='<div class=\'perso-placeholder\'>🦅</div>'">
+                </div>
+                <div class="perso-content">
+                    <h3 class="perso-name">Odin</h3>
+                    <p class="perso-ere">Ère Nordique — Antagoniste Final</p>
+                    <p class="perso-desc-short">Le Père de Tout. Roi des Ases et véritable marionnettiste derrière le Ragnarök. Manipulateur et omniscient, il est le grand ennemi de la saga nordique.</p>
+                    <div class="perso-jeux">
+                        <span class="jeu-pill combat-pill">God of War Ragnarök (2022) — Boss final</span>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- BROK & SINDRI -->
+            <div class="perso-card" data-relation="allie" data-ere="nordique" onclick="ouvrirModal(this)"
+                data-nom="Brok et Sindri"
+                data-ere-label="Ère Nordique"
+                data-desc="Les deux frères nains, forgerons légendaires ayant créé le Mjölnir de Thor et la Hache Léviathan de Kratos. Brok est bourru, grossier et direct, tandis que Sindri est méticuleux, propre et anxieux. Ensemble ils tiennent des ateliers à travers les royaumes et améliorent les équipements de Kratos tout au long des deux jeux. Dans Ragnarök, ils rejoignent activement la résistance contre Odin. La mort de Brok lors d'une trahison d'Odin est l'un des moments les plus bouleversants de la saga."
+                data-jeux="God of War (2018) — Forgerons|allie,God of War Ragnarök (2022) — Résistance|allie"
+                data-badge="Alliés" data-badge-type="allie">
+                <div class="badge badge-allie">Alliés</div>
+                <div class="perso-image-wrapper">
+                    <img class="perso-img" src="../images/personnages/brok_sindri.jpg" alt="Brok et Sindri"
+                         onerror="this.parentElement.innerHTML='<div class=\'perso-placeholder\'>🔨</div>'">
+                </div>
+                <div class="perso-content">
+                    <h3 class="perso-name">Brok &amp; Sindri</h3>
+                    <p class="perso-ere">Ère Nordique</p>
+                    <p class="perso-desc-short">Les deux nains forgerons créateurs de la Hache Léviathan. Ils améliorent l'équipement de Kratos et rejoignent la résistance contre Odin dans Ragnarök.</p>
+                    <div class="perso-jeux">
+                        <span class="jeu-pill allie-pill">God of War (2018) — Forgerons</span>
+                        <span class="jeu-pill allie-pill">Ragnarök (2022) — Résistance</span>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- MAGNI & MODI -->
+            <div class="perso-card" data-relation="ennemi" data-ere="nordique" onclick="ouvrirModal(this)"
+                data-nom="Magni et Modi"
+                data-ere-label="Ère Nordique"
+                data-desc="Les deux fils de Thor, envoyés par Odin pour capturer Atreus et retrouver le Géant masqué (Kratos). Magni est le fils légitime et le guerrier redouté du duo — grand, puissant, porteur d'une épée divine. Modi est le fils bâtard, plus craintif mais perfide. Lors de leur affrontement avec Kratos et Atreus, Magni est tué par Kratos. Modi, traumatisé, s'enfuit mais sera retrouvé par Atreus qui le tue sous le choc d'une fièvre divine. Leur mort plonge Thor dans le deuil."
+                data-jeux="God of War (2018) — Boss en duo|ennemi"
+                data-badge="Ennemis" data-badge-type="ennemi">
+                <div class="badge badge-ennemi">Ennemis</div>
+                <div class="perso-image-wrapper">
+                    <img class="perso-img" src="../images/personnages/magni_modi.png" alt="Magni et Modi"
+                         onerror="this.parentElement.innerHTML='<div class=\'perso-placeholder\'>🪓</div>'">
+                </div>
+                <div class="perso-content">
+                    <h3 class="perso-name">Magni &amp; Modi</h3>
+                    <p class="perso-ere">Ère Nordique</p>
+                    <p class="perso-desc-short">Les fils de Thor chargés de capturer Kratos. Ils l'affrontent en duo dans un combat mémorable. Leur mort devastera Thor et scellera la rancœur d'Odin.</p>
+                    <div class="perso-jeux">
+                        <span class="jeu-pill combat-pill">God of War (2018) — Boss en duo</span>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- TÝR -->
+            <div class="perso-card" data-relation="allie" data-ere="nordique" onclick="ouvrirModal(this)"
+                data-nom="Týr"
+                data-ere-label="Ère Nordique"
+                data-desc="Dieu nordique de la guerre et de la justice, disparu depuis des siècles et cru mort par tous. Týr est la seule divinité nordique qui traitait les géants avec respect et cherchait la paix entre les royaumes. Sa chambre secrète révèle des artefacts de toutes les mythologies mondiales, montrant l'étendue de ses voyages. Dans Ragnarök, Kratos et Atreus le retrouvent emprisonné dans les mines de Svartalfheim — mais 'Týr' est en réalité Odin déguisé qui espionne la résistance depuis l'intérieur."
+                data-jeux="God of War Ragnarök (2022)|allie"
+                data-badge="Allié (Mystère)" data-badge-type="neutre">
+                <div class="badge badge-neutre">Allié (Mystère)</div>
+                <div class="perso-image-wrapper">
+                    <img class="perso-img" src="../images/personnages/tyr.jpg" alt="Týr"
+                         onerror="this.parentElement.innerHTML='<div class=\'perso-placeholder\'>⚖️</div>'">
+                </div>
+                <div class="perso-content">
+                    <h3 class="perso-name">Týr</h3>
+                    <p class="perso-ere">Ère Nordique</p>
+                    <p class="perso-desc-short">Dieu de la guerre nordique et symbole de paix entre royaumes. Retrouvé emprisonné dans Ragnarök — mais son identité cache un secret bouleversant lié à Odin.</p>
+                    <div class="perso-jeux">
+                        <span class="jeu-pill allie-pill">God of War Ragnarök (2022)</span>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- ZEUS -->
+            <div class="perso-card" data-relation="ennemi" data-ere="grecque" onclick="ouvrirModal(this)"
+                data-nom="Zeus"
+                data-ere-label="Ère Grecque — Antagoniste Final"
+                data-desc="Roi de l'Olympe et père biologique de Kratos, qu'il a trahi et tué par peur de la prophétie le condamnant. Zeus est le grand ennemi de la trilogie grecque. Après avoir trahi Kratos dans God of War II, ce dernier consacre le troisième opus à remonter l'Olympe pour le tuer. Le combat final père-fils dans God of War III est l'un des moments les plus intenses de la saga — Kratos le tue à mains nues dans une rage incontrôlable, avant d'être rappelé à lui-même par l'esprit d'Athéna."
+                data-jeux="God of War II (2007) — Boss|ennemi,God of War III (2010) — Boss final|ennemi"
+                data-badge="Antagoniste Final" data-badge-type="ennemi">
+                <div class="badge badge-ennemi">Antagoniste Final</div>
+                <div class="perso-image-wrapper">
+                    <img class="perso-img" src="../images/personnages/zeus.jpg" alt="Zeus"
+                         onerror="this.parentElement.innerHTML='<div class=\'perso-placeholder\'>🌩️</div>'">
+                </div>
+                <div class="perso-content">
+                    <h3 class="perso-name">Zeus</h3>
+                    <p class="perso-ere">Ère Grecque — Antagoniste Final</p>
+                    <p class="perso-desc-short">Roi de l'Olympe et père biologique de Kratos. Il le trahit par peur d'une prophétie. Kratos lui voue une vengeance absolue à travers toute la trilogie grecque.</p>
+                    <div class="perso-jeux">
+                        <span class="jeu-pill combat-pill">God of War II (2007) — Boss</span>
+                        <span class="jeu-pill combat-pill">God of War III (2010) — Boss final</span>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- ARÈS -->
+            <div class="perso-card" data-relation="ennemi" data-ere="grecque" onclick="ouvrirModal(this)"
+                data-nom="Arès"
+                data-ere-label="Ère Grecque — Premier Antagoniste"
+                data-desc="Dieu de la guerre grec et premier maître de Kratos. C'est lui qui a mené Kratos à commettre l'impensable : tuer sa propre femme et sa propre fille lors d'une attaque d'un temple d'Athéna. Cet acte, commis sous son emprise, est le catalyseur de toute la saga. Kratos passe dix ans à servir les dieux avant d'obtenir une chance de vengeance. Dans God of War (2005), il affronte Arès et le tue avec la Lance des Dieux, devenant lui-même le nouveau Dieu de la Guerre."
+                data-jeux="God of War (2005) — Boss final|ennemi"
+                data-badge="Ennemi Originel" data-badge-type="ennemi">
+                <div class="badge badge-ennemi">Ennemi Originel</div>
+                <div class="perso-image-wrapper">
+                    <img class="perso-img" src="../images/personnages/Ares.jpg" alt="Arès"
+                         onerror="this.parentElement.innerHTML='<div class=\'perso-placeholder\'>🔥</div>'">
+                </div>
+                <div class="perso-content">
+                    <h3 class="perso-name">Arès</h3>
+                    <p class="perso-ere">Ère Grecque — Premier Antagoniste</p>
+                    <p class="perso-desc-short">Dieu de la guerre qui a manipulé Kratos pour qu'il tue sa propre famille. C'est pour se venger de lui que Kratos entreprend sa quête dans le premier God of War.</p>
+                    <div class="perso-jeux">
+                        <span class="jeu-pill combat-pill">God of War (2005) — Boss final</span>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- ATHÉNA -->
+            <div class="perso-card" data-relation="allie" data-ere="grecque" onclick="ouvrirModal(this)"
+                data-nom="Athéna"
+                data-ere-label="Ère Grecque — Alliée Ambiguë"
+                data-desc="Déesse de la sagesse et alliée ambiguë de Kratos. C'est elle qui guide Kratos contre Arès dans le premier jeu, promettant de le délivrer de ses cauchemars. Dans God of War II, elle meurt en tentant de protéger Zeus. Son esprit revient dans God of War III, révélant sa vraie nature manipulatrice : elle voulait se servir de la colère de Kratos pour s'emparer de l'Espoir libéré par la boîte de Pandore et régner à sa place sur un monde sans dieux."
+                data-jeux="God of War (2005) — Alliée|allie,God of War II (2007) — Alliée|allie,God of War III (2010) — Rivale|ennemi"
+                data-badge="Alliée / Rivale" data-badge-type="neutre">
+                <div class="badge badge-neutre">Alliée / Rivale</div>
+                <div class="perso-image-wrapper">
+                    <img class="perso-img" src="../images/personnages/Athena.jpg" alt="Athéna"
+                         onerror="this.parentElement.innerHTML='<div class=\'perso-placeholder\'>🦉</div>'">
+                </div>
+                <div class="perso-content">
+                    <h3 class="perso-name">Athéna</h3>
+                    <p class="perso-ere">Ère Grecque — Alliée Ambiguë</p>
+                    <p class="perso-desc-short">Guide de Kratos dans l'ère grecque. Son véritable but est révélé dans God of War III : elle voulait utiliser Kratos pour s'emparer du pouvoir des dieux.</p>
+                    <div class="perso-jeux">
+                        <span class="jeu-pill allie-pill">God of War (2005) — Alliée</span>
+                        <span class="jeu-pill allie-pill">God of War II (2007) — Alliée</span>
+                        <span class="jeu-pill combat-pill">God of War III (2010) — Rivale</span>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- POSÉIDON -->
+            <div class="perso-card" data-relation="ennemi" data-ere="grecque" onclick="ouvrirModal(this)"
+                data-nom="Poséidon"
+                data-ere-label="Ère Grecque"
+                data-desc="Dieu des mers et des océans, l'un des premiers Olympiens à être tué par Kratos dans God of War III. Tandis que les Titans escaladent l'Olympe, Poséidon se bat pour défendre la montagne sacrée. Il affronte Kratos dans un combat titanesque, chevauchant d'immenses hippocampes divins. Sa mort par les mains de Kratos provoque une catastrophe naturelle : les océans envahissent les terres, provoquant des inondations massives à travers toute la Grèce."
+                data-jeux="God of War III (2010) — Premier boss|ennemi"
+                data-badge="Ennemi" data-badge-type="ennemi">
+                <div class="badge badge-ennemi">Ennemi</div>
+                <div class="perso-image-wrapper">
+                    <img class="perso-img" src="../images/personnages/Poseidon.jpg" alt="Poséidon"
+                         onerror="this.parentElement.innerHTML='<div class=\'perso-placeholder\'>🌊</div>'">
+                </div>
+                <div class="perso-content">
+                    <h3 class="perso-name">Poséidon</h3>
+                    <p class="perso-ere">Ère Grecque</p>
+                    <p class="perso-desc-short">Dieu des mers, premier Olympien affronté dans God of War III. Sa mort déclenche des inondations catastrophiques sur toute la Grèce.</p>
+                    <div class="perso-jeux">
+                        <span class="jeu-pill combat-pill">God of War III (2010) — Premier boss</span>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- HADÈS -->
+            <div class="perso-card" data-relation="ennemi" data-ere="grecque" onclick="ouvrirModal(this)"
+                data-nom="Hadès"
+                data-ere-label="Ère Grecque"
+                data-desc="Dieu des Enfers et gardien du royaume des morts. Hadès a une rancune particulière envers Kratos car ce dernier a arraché l'âme de sa femme Perséphone dans God of War: Chains of Olympus. Dans God of War III, il affronte Kratos dans le royaume des morts pour récupérer son âme. Kratos lui vole ses griffes divines et le tue en aspirant son âme, libérant toutes les âmes des morts des Enfers — perturbant l'ordre naturel de la mort."
+                data-jeux="God of War III (2010) — Boss|ennemi"
+                data-badge="Ennemi" data-badge-type="ennemi">
+                <div class="badge badge-ennemi">Ennemi</div>
+                <div class="perso-image-wrapper">
+                    <img class="perso-img" src="../images/personnages/Hades.jpg" alt="Hadès"
+                         onerror="this.parentElement.innerHTML='<div class=\'perso-placeholder\'>💀</div>'">
+                </div>
+                <div class="perso-content">
+                    <h3 class="perso-name">Hadès</h3>
+                    <p class="perso-ere">Ère Grecque</p>
+                    <p class="perso-desc-short">Maître des Enfers. Kratos affronte le roi des morts dans son propre royaume et lui vole ses griffes divines, libérant toutes les âmes des défunts.</p>
+                    <div class="perso-jeux">
+                        <span class="jeu-pill combat-pill">God of War III (2010) — Boss</span>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- HERMÈS -->
+            <div class="perso-card" data-relation="ennemi" data-ere="grecque" onclick="ouvrirModal(this)"
+                data-nom="Hermès"
+                data-ere-label="Ère Grecque"
+                data-desc="Messager des dieux et fils de Zeus. Hermès est arrogant, rapide et moqueur. Il raille Kratos tout au long de God of War III, se vantant de sa vitesse et de son intouchabilité. Kratos doit le pourchasser à travers l'Olympe avant de l'attraper et de lui arracher ses bottes divines pour s'approprier sa vitesse. La mort d'Hermès déclenche une invasion de mouches et une épidémie mortelle sur toute la Grèce."
+                data-jeux="God of War III (2010) — Boss|ennemi"
+                data-badge="Ennemi" data-badge-type="ennemi">
+                <div class="badge badge-ennemi">Ennemi</div>
+                <div class="perso-image-wrapper">
+                    <img class="perso-img" src="../images/personnages/Hermes.jpg" alt="Hermès"
+                         onerror="this.parentElement.innerHTML='<div class=\'perso-placeholder\'>💨</div>'">
+                </div>
+                <div class="perso-content">
+                    <h3 class="perso-name">Hermès</h3>
+                    <p class="perso-ere">Ère Grecque</p>
+                    <p class="perso-desc-short">Messager des dieux, arrogant et rapide. Kratos le pourchasse à travers l'Olympe pour lui dérober ses sandales ailées et leur vitesse divine.</p>
+                    <div class="perso-jeux">
+                        <span class="jeu-pill combat-pill">God of War III (2010) — Boss</span>
+                    </div>
+                </div>
+            </div>
+ 
+        </section>
+    </main>
+ 
+    <footer>
+        <p>Projet réalisé par Jawed - ECAM EPMI 2025</p>
+    </footer>
+ 
+    <script src="../personnages.js"></script>
+</body>
+</html>

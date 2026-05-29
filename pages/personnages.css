@@ -1,0 +1,390 @@
+/* ========== HERO ========== */
+.perso-hero {
+    text-align: center;
+    padding: 80px 20px 50px;
+    background: linear-gradient(135deg, #2c343a 0%, #1a1e22 100%);
+    border-bottom: 2px solid rgba(255, 0, 0, 0.2);
+}
+ 
+.perso-hero h2 {
+    font-family: 'thor', Arial, sans-serif;
+    font-size: 48px;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.5);
+    margin-bottom: 16px;
+}
+ 
+.perso-hero p {
+    color: #aaaaaa;
+    font-size: 18px;
+}
+ 
+/* ========== FILTRES ========== */
+.filtres-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 40px 20px 20px;
+}
+ 
+.filtre-btn {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #aaaaaa;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+ 
+.filtre-btn:hover {
+    border-color: rgba(255, 0, 0, 0.5);
+    color: #ffffff;
+    background: rgba(255, 0, 0, 0.08);
+}
+ 
+.filtre-btn.active {
+    background: rgba(255, 0, 0, 0.15);
+    border-color: #ff0000;
+    color: #ff4444;
+    box-shadow: 0 0 14px rgba(255, 0, 0, 0.2);
+}
+ 
+/* ========== KRATOS BANNER ========== */
+.kratos-banner {
+    position: relative;
+    max-width: 1400px;
+    margin: 30px auto;
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 40px;
+    align-items: center;
+    background: linear-gradient(135deg, #0d0d0d 0%, #1a0000 100%);
+    border: 2px solid #ff0000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.15);
+}
+ 
+.kratos-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(255, 0, 0, 0.02) 40px,
+        rgba(255, 0, 0, 0.02) 41px
+    );
+    pointer-events: none;
+}
+ 
+.kratos-image-wrapper {
+    height: 320px;
+    overflow: hidden;
+    border-radius: 8px 0 0 8px;
+    flex-shrink: 0;
+}
+ 
+.kratos-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+ 
+.kratos-info {
+    position: relative;
+    z-index: 1;
+    padding: 30px 30px 30px 0;
+}
+ 
+.kratos-label {
+    font-size: 12px;
+    color: #ff0000;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+ 
+.kratos-name {
+    font-family: 'GodOfWar', Arial, sans-serif;
+    font-size: 52px;
+    color: #ffffff;
+    text-shadow: 3px 3px 20px rgba(255, 0, 0, 0.6);
+    line-height: 1;
+    margin-bottom: 20px;
+}
+ 
+.kratos-desc {
+    color: #cccccc;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+ 
+.kratos-stats {
+    display: flex;
+    gap: 36px;
+    flex-wrap: wrap;
+}
+ 
+.stat {
+    text-align: center;
+}
+ 
+.stat-value {
+    display: block;
+    font-family: 'GodOfWar', Arial, sans-serif;
+    font-size: 30px;
+    color: #ff0000;
+}
+ 
+.stat-label {
+    font-size: 11px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+ 
+/* ========== GRILLE ========== */
+.perso-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 28px;
+    max-width: 1400px;
+    margin: 40px auto 80px;
+    padding: 0 30px;
+}
+ 
+/* ========== CARTE PERSONNAGE ========== */
+.perso-card {
+    position: relative;
+    background: #0d0d0d;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 0, 0, 0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+ 
+.perso-card:hover {
+    transform: translateY(-10px);
+    border-color: #ff0000;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.3);
+}
+ 
+/* ========== BADGES ========== */
+.badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 5;
+}
+ 
+.badge-ennemi {
+    background: rgba(180, 0, 0, 0.85);
+    color: #ffcccc;
+    border: 1px solid rgba(255, 80, 80, 0.5);
+}
+ 
+.badge-allie {
+    background: rgba(0, 100, 40, 0.85);
+    color: #ccffdd;
+    border: 1px solid rgba(80, 200, 120, 0.5);
+}
+ 
+.badge-neutre {
+    background: rgba(60, 60, 80, 0.85);
+    color: #ccccee;
+    border: 1px solid rgba(150, 150, 200, 0.4);
+}
+ 
+/* ========== IMAGE ========== */
+.perso-image-wrapper {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    background: #111418;
+}
+ 
+.perso-image-wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: linear-gradient(transparent, #0d0d0d);
+}
+ 
+.perso-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.5s ease;
+    filter: brightness(0.9);
+}
+ 
+.perso-card:hover .perso-img {
+    transform: scale(1.06);
+    filter: brightness(1.05);
+}
+ 
+.perso-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    opacity: 0.3;
+    background: linear-gradient(135deg, #111418, #1a1e22);
+}
+ 
+/* ========== CONTENU CARTE ========== */
+.perso-content {
+    padding: 18px 20px 22px;
+}
+ 
+.perso-name {
+    font-family: 'GodOfWar', Arial, sans-serif;
+    font-size: 22px;
+    color: #ff0000;
+    margin-bottom: 4px;
+    text-shadow: 1px 1px 8px rgba(255, 0, 0, 0.3);
+}
+ 
+.perso-ere {
+    font-size: 12px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+ 
+.perso-desc-short {
+    color: #cccccc;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+ 
+/* ========== PILLS JEUX ========== */
+.perso-jeux {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+ 
+.jeu-pill {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #888;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+ 
+.combat-pill {
+    border-color: rgba(255, 0, 0, 0.35);
+    color: #ff7070;
+    background: rgba(255, 0, 0, 0.07);
+}
+ 
+.allie-pill {
+    border-color: rgba(80, 200, 120, 0.35);
+    color: #70cc90;
+    background: rgba(80, 200, 120, 0.07);
+}
+ 
+/* ========== PANNEAU INFO (réutilise map.css + ajouts) ========== */
+/* Le panneau principal vient de map.css via style.css
+   On ajoute seulement ce qui est spécifique aux personnages */
+ 
+#perso-image {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 10px;
+    border: 3px solid #ff0000;
+    margin-bottom: 20px;
+    display: block;
+}
+ 
+#perso-titre {
+    font-family: 'GodOfWar', Arial, sans-serif;
+    color: #ff0000;
+    font-size: 36px;
+    margin-bottom: 6px;
+    text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.5);
+}
+ 
+#perso-ere-label {
+    color: #888;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+ 
+#perso-description {
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.85;
+    margin-bottom: 22px;
+    text-align: justify;
+}
+ 
+#perso-jeux-detail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+}
+ 
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .perso-hero h2 { font-size: 34px; }
+ 
+    .kratos-banner {
+        grid-template-columns: 1fr;
+        padding: 0;
+        margin: 16px;
+    }
+ 
+    .kratos-image-wrapper {
+        height: 220px;
+        border-radius: 8px 8px 0 0;
+        width: 100%;
+    }
+ 
+    .kratos-info {
+        padding: 24px;
+    }
+ 
+    .kratos-name { font-size: 38px; }
+    .kratos-stats { justify-content: center; }
+ 
+    .perso-grid {
+        grid-template-columns: 1fr;
+        padding: 0 16px;
+    }
+}
